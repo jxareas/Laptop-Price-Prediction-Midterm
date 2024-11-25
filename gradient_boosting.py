@@ -19,7 +19,7 @@ random_state = 11
 
 # %% Loading dataframe
 
-df = pd.read_csv('data/ebay_laptops_clean.csv')
+df = pd.read_csv('data/ebay_laptops_dataset.csv')
 
 # %% Data Checks
 count_df = df.shape[0]
