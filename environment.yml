@@ -47,12 +47,12 @@ dependencies:
   - brotli-python=1.1.0=py310hf71b8c6_2
   - bzip2=1.0.8=h4bc722e_7
   - c-ares=1.34.3=heb4867d_0
-  - ca-certificates=2024.8.30=hbcca054_0
+  - ca-certificates=2024.9.24=h06a4308_0
   - cached-property=1.5.2=hd8ed1ab_1
   - cached_property=1.5.2=pyha770c72_1
   - cairo=1.18.0=hebfffa5_3
   - catboost=1.2.7=py310hff52083_0
-  - certifi=2024.8.30=pyhd8ed1ab_0
+  - certifi=2024.8.30=py310h06a4308_0
   - cffi=1.17.1=py310h8deb56e_0
   - charset-normalizer=3.4.0=pyhd8ed1ab_0
   - click=8.1.7=unix_pyh707e725_0
@@ -74,6 +74,7 @@ dependencies:
   - entrypoints=0.4=pyhd8ed1ab_0
   - exceptiongroup=1.2.2=pyhd8ed1ab_0
   - executing=2.1.0=pyhd8ed1ab_0
+  - feature_engine=1.8.1=pyhd8ed1ab_0
   - flask=2.3.3=pyhd8ed1ab_0
   - flask_cors=3.0.10=pyhd3deb0d_0
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
@@ -216,7 +217,7 @@ dependencies:
   - ncurses=6.5=he02047a_1
   - nest-asyncio=1.6.0=pyhd8ed1ab_0
   - nltk=3.9.1=pyhd8ed1ab_0
-  - notebook=7.2.2=pyhd8ed1ab_0
+  - notebook=7.2.2=py310h06a4308_1
   - notebook-shim=0.2.4=pyhd8ed1ab_0
   - numba=0.60.0=py310h5dc88bb_0
   - numpy=1.24.4=py310ha4c1d20_0

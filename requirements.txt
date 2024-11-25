@@ -1,7 +1,7 @@
 requests~=2.32.3
-pandas~=2.2.2
+pandas~=1.5.3
 beautifulsoup4~=4.12.3
-numpy~=1.26.4
+numpy~=1.24.4
 #dataprep~=0.4.5
 scikit-learn~=1.5.1
-xgboost~=2.1.2
+xgboost~=1.6.2
