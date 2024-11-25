@@ -1,0 +1,21 @@
+{
+  "brand": "other",
+  "color": "other",
+  "condition": "Used",
+  "gpu": "intel",
+  "processor": "undefined",
+  "processor_speed": null,
+  "processor_speed_unit": "unknown",
+  "type": "other",
+  "display_width": null,
+  "display_height": null,
+  "os": "unknown",
+  "storage_type": "unknown",
+  "hard_drive_capacity": null,
+  "hard_drive_capacity_unit": "unknown",
+  "ssd_capacity": null,
+  "ssd_capacity_unit": "unknown",
+  "screen_size_inch": null,
+  "ram_size": null,
+  "ram_size_unit": "unknown"
+}

@@ -1,7 +1,8 @@
 requests~=2.32.3
 pandas~=1.5.3
-beautifulsoup4~=4.12.3
 numpy~=1.24.4
-#dataprep~=0.4.5
 scikit-learn~=1.5.1
 xgboost~=1.6.2
+flask~=2.3.3
+autoviz~=0.1.806
+ipython~=8.29.0
