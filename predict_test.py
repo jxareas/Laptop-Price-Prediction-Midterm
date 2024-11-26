@@ -1,4 +1,9 @@
-{
+import requests
+
+host = "localhost:9696"
+url = f"http://{host}/predict"
+
+laptop = {
   "brand": "hp",
   "color": "silver",
   "condition": "Used",
@@ -7,8 +12,8 @@
   "processor_speed": "2.30",
   "processor_speed_unit": "GHz",
   "type": "notebook/laptop",
-  "display_width": null,
-  "display_height": null,
+  "display_width": "1366",
+  "display_height": "768",
   "os": "windows",
   "storage_type": "ssd",
   "hard_drive_capacity": 512.0,
@@ -19,3 +24,6 @@
   "ram_size": 16.0,
   "ram_size_unit": "gb"
 }
+
+response = requests.post(url, json=laptop).json()
+print(response)

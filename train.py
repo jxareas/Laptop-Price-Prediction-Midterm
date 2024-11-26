@@ -23,7 +23,7 @@ df.head()
 df.columns = df.columns.str.lower() \
     .str.replace(r'[\(\)]', '', regex=True) \
     .str.replace(' ', '_')
-
+# %% Preprocessing
 # Renaming a couple of columns
 df = df.rename(columns={
     'width_of_the_display': 'display_width',
@@ -73,6 +73,7 @@ y_test = df_test[target]
 del df_train[target], df_val[target], df_test[target], df_full_train[target]
 
 
+# %% Model Training
 def evaluate_regression_model(title, model, param_grid, X_train, y_train, X_val, y_val, cv=5,
                               scoring='neg_mean_squared_error'):
     """

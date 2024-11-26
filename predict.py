@@ -1,5 +1,6 @@
 import pickle
 import logging
+import pandas as pd
 from flask import Flask, request, jsonify
 
 # Configure logging
@@ -11,7 +12,7 @@ model_file = 'laptop_price_rf.bin'
 # Load the model and preprocessor
 try:
     with open(model_file, 'rb') as f_in:
-        preprocessor, model = pickle.load(f_in)
+        model, preprocessor = pickle.load(f_in)
     logging.info('Preprocessor and model loaded successfully.')
 except FileNotFoundError:
     logging.error(f'Model file {model_file} not found. Please ensure the file is available.')
@@ -44,16 +45,16 @@ def predict():
         if missing_fields:
             return jsonify({"error": f"Missing fields in input: {', '.join(missing_fields)}"}), 400
 
-        # Preprocess input data
-        X = preprocessor.transform([laptop_data])
+        laptop_df = pd.DataFrame([laptop_data])
 
-        # Make prediction
-        price_pred = model.predict(X)[0]
+        # Preprocess the input data
+        X_input = preprocessor.transform(laptop_df)
 
-        # Return prediction result
-        result = {
-            'predicted_price': float(price_pred)
-        }
+        # Get the model prediction
+        price_prediction = model.predict(X_input)[0]
+
+        result = {"predicted_price": float(price_prediction)}
+
         return jsonify(result)
     except Exception as e:
         logging.error(f'Error during prediction: {e}')
