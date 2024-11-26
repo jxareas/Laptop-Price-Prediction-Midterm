@@ -48,12 +48,16 @@ def predict():
         laptop_df = pd.DataFrame([laptop_data])
 
         # Preprocess the input data
-        X_input = preprocessor.transform(laptop_df)
+        X = preprocessor.transform(laptop_df)
 
         # Get the model prediction
-        price_prediction = model.predict(X_input)[0]
+        price_prediction = model.predict(X)[0]
 
         result = {"predicted_price": float(price_prediction)}
+
+        # Logging the laptop prediction
+        laptop = f"laptop {laptop_data['brand']} with {laptop_data['gpu']} gpu"
+        logging.info(f"Successfully predicted laptop price {price_prediction.round(2)}$ for {laptop}")
 
         return jsonify(result)
     except Exception as e:

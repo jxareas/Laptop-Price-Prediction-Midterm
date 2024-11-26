@@ -2,6 +2,25 @@
 
 ![](./assets/images/laptops.png)
 
+## Installation
+
+1. Clone the Repository:
+    ```bash
+    git clone git@github.com:jxareas/Laptop-Price-Prediction-Midterm.git
+    ```
+
+2. Activate the virtual environment
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # windows -> venv\Scripts\activate
+    ```
+
+3. Install all dependencies using pip
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
 ## Problem Description
 
 In this project, we tackle the problem of predicting the price of laptops and netbooks listed on eBay using a dataset
@@ -58,3 +77,36 @@ range for different types of laptops.
 The solution can be further extended to predict other variables, such as the laptop's rating or the number of reviews,
 and can be integrated into eBay's pricing tools or third-party price comparison websites. Furthermore, we might even
 go as far to perform a similar process with other e-commerce sites (such as Amazon).
+
+## Containerization
+
+### Building the image
+
+We can build the docker image for the Flask API of this project by doing:
+
+```bash
+docker build -t laptop-price-prediction .
+```
+
+Containers package the application along with all its dependencies and configurations, ensuring that the app runs
+consistently across different environments, whether it's a local machine, staging, or production server.
+
+### Creating and running the container
+
+The following command starts a Docker container based on the `laptop-price-prediction:latest` image, 
+running it interactively (`-it`), removes the container after it stops (`--rm`), and maps port `9696` on the host 
+to port `9696` inside the container. 
+This setup is typically used to run a service, like a web API, from the container while keeping the terminal
+session open for interaction.
+
+```bash
+docker run -it --rm -p 9696:9696 laptop-price-prediction:latest
+```
+
+
+## Testing the deployment
+
+Run `predict_test.py` with either a local server (by running the `predict.py` python script) or the Docker 
+container with `docker run -it --rm -p 9696:9696 hypertension-prediction:latest`.
+
+![img.png](assets/images/prediction-logs.png)
