@@ -12,6 +12,7 @@ xgboost = "~=1.6.2"
 flask = "~=2.3.3"
 autoviz = "~=0.1.806"
 ipython = "~=8.29.0"
+gunicorn = "*"
 
 [dev-packages]
 
